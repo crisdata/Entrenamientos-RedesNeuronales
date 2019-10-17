@@ -59,13 +59,13 @@ class Perceptron():
 
 		#Salidas
 		Entry(textvariable=self.salida1).place(x=390,y=50)
-		Label(text="Salida-1:").place(x=340,y=50)
+		Label(text="Salida-1:").place(x=328,y=50)
 		Entry(textvariable=self.salida2).place(x=390,y=70)
-		Label(text="Salida-2:").place(x=340,y=70)
+		Label(text="Salida-2:").place(x=328,y=70)
 		Entry(textvariable=self.salida3).place(x=390,y=90)
-		Label(text="Salida-3:").place(x=340,y=90)
+		Label(text="Salida-3:").place(x=328,y=90)
 		Entry(textvariable=self.salida4).place(x=390,y=110)
-		Label(text="Salida-4:").place(x=340,y=110)
+		Label(text="Salida-4:").place(x=328,y=110)
 
 		# Sesgo de bahies
 		Entry(textvariable=self.sesgoB).place(x=130,y=170)
