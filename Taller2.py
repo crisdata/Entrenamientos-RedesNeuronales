@@ -26,13 +26,11 @@ class Perceptron():
 
 
 		self.ventana.title("Taller 2")
-		self.ventana.geometry("500x500")
+		self.ventana.geometry("600x500")
 
-		self.notebook = ttk.Notebook(self.ventana)
-		self.notebook.pack(fill='both',expand='yes')
-		self.pest0 = ttk.Frame(self.notebook)
-		self.pest1 = ttk.Frame(self.notebook)
-		self.pest2 = ttk.Frame(self.notebook)
+		#self.notebook = ttk.Notebook(self.ventana)
+		#self.notebook.pack(fill='both',expand='yes')
+
 
 		# Arreglo de entrada
 		self.entradas=[]
@@ -46,34 +44,47 @@ class Perceptron():
 
 	#Enrada de Datos
 	def nombreCajitas(self):
-		self.notebook.add(self.pest0,text="Perceptron")
-		Label(self.pest0,text="Perceptron").place(x=230,y=5)
+		Label(text="Entrenamiento de Neuronas").place(x=210,y=5)
 
 		#Set de Entrenamiento
 		#Entradas
-		Entry(self.pest0,textvariable=self.entrada1).place(x=100,y=30)
-		Entry(self.pest0,textvariable=self.entrada2).place(x=100,y=50)
-		Entry(self.pest0,textvariable=self.entrada3).place(x=100,y=70)
-		Entry(self.pest0,textvariable=self.entrada4).place(x=100,y=90)
+		Entry(textvariable=self.entrada1).place(x=100,y=50)
+		Label(text="Entrada-1:").place(x=30,y=50)
+		Entry(textvariable=self.entrada2).place(x=100,y=70)
+		Label(text="Entrada-2:").place(x=30,y=70)
+		Entry(textvariable=self.entrada3).place(x=100,y=90)
+		Label(text="Entrada-3:").place(x=30,y=90)
+		Entry(textvariable=self.entrada4).place(x=100,y=110)
+		Label(text="Entrada-4:").place(x=30,y=110)
 
 		#Salidas
-		Entry(self.pest0,textvariable=self.salida1).place(x=250,y=30)
-		Entry(self.pest0,textvariable=self.salida2).place(x=250,y=50)
-		Entry(self.pest0,textvariable=self.salida3).place(x=250,y=70)
-		Entry(self.pest0,textvariable=self.salida4).place(x=250,y=90)
-
-		Button(self.pest0,text="Ejecutar",command=self.entrenarPerceptron).place(x=240,y=220)
-		Button(self.pest0,text="Ejecutar2",command=self.entrenarSimple).place(x=280,y=220)
-		Button(self.pest0,text="Ejecutar3",command=self.entrenarMulti).place(x=320,y=220)
+		Entry(textvariable=self.salida1).place(x=390,y=50)
+		Label(text="Salida-1:").place(x=340,y=50)
+		Entry(textvariable=self.salida2).place(x=390,y=70)
+		Label(text="Salida-2:").place(x=340,y=70)
+		Entry(textvariable=self.salida3).place(x=390,y=90)
+		Label(text="Salida-3:").place(x=340,y=90)
+		Entry(textvariable=self.salida4).place(x=390,y=110)
+		Label(text="Salida-4:").place(x=340,y=110)
 
 		# Sesgo de bahies
-		Entry(self.pest0,textvariable=self.sesgoB).place(x=250,y=130)
+		Entry(textvariable=self.sesgoB).place(x=130,y=170)
+		Label(text="Sesgo Bahies:").place(x=35,y=170)
 
 		# Entrenamientos
-		Entry(self.pest0,textvariable=self.entrenamiento).place(x=250,y=150)
+		Entry(textvariable=self.entrenamiento).place(x=130,y=190)
+		Label(text="Epocas:").place(x=35,y=190)
 
 		# Funciones de activacion
-		ttk.Combobox(self.pest0,values=("Tangente","Sigmoide"),textvariable=self.elegirActvacion).place(x=250,y=170)
+		ttk.Combobox(values=("Tangente","Sigmoide"),textvariable=self.elegirActvacion).place(x=365,y=190)
+		Label(text="Funciones de Activacion (RNS y RNM):").place(x=330,y=170)
+
+		# Botones de activacion Neurona
+		Button(text="Perceptron",command=self.entrenarPerceptron).place(x=70,y=250)
+		Button(text="Red NeuronalSimple",command=self.entrenarSimple).place(x=190,y=250)
+		Button(text="Red NeuronalMulticapa",command=self.entrenarMulti).place(x=370,y=250)
+
+
 
 
 		self.ventana.mainloop()
